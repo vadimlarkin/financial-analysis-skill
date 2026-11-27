@@ -53,7 +53,7 @@
       }
     }
   ],
-  "layout": "coverage",
+  "layout": "ip",
   "accounting_mode": "ip",
   "financial": {
     "fields": {
@@ -65,6 +65,181 @@
         ],
         "derivation": "Календарь обязательств и сценарий денежной позиции."
       }
+    },
+    "ip": {
+      "project": {
+        "status": "confirmed",
+        "value": "Учебный пример денежного потока мастерской.",
+        "sources": [
+          "BANK"
+        ]
+      },
+      "bank_scope": {
+        "start": "2025-01-01",
+        "end": "2025-12-31",
+        "operations": 24,
+        "accounts": 1,
+        "sources": [
+          "BANK"
+        ]
+      },
+      "operating": {
+        "status": "calculated",
+        "value": 24000,
+        "sources": [
+          "BANK"
+        ],
+        "derivation": "Сумма строк учебной выписки."
+      },
+      "suppliers": {
+        "status": "calculated",
+        "value": 14400,
+        "sources": [
+          "BANK"
+        ],
+        "derivation": "Сумма строк учебной выписки."
+      },
+      "flow_note": {
+        "status": "confirmed",
+        "value": "В учебной выписке один счёт. Показаны поступления от клиентов и расходы на материалы.",
+        "sources": [
+          "BANK"
+        ]
+      },
+      "monthly_receipts": [
+        {
+          "month": "2025-01",
+          "fact": {
+            "status": "calculated",
+            "value": 2000,
+            "sources": [
+              "BANK"
+            ],
+            "derivation": "Сумма строк учебной выписки."
+          }
+        },
+        {
+          "month": "2025-02",
+          "fact": {
+            "status": "calculated",
+            "value": 2000,
+            "sources": [
+              "BANK"
+            ],
+            "derivation": "Сумма строк учебной выписки."
+          }
+        },
+        {
+          "month": "2025-03",
+          "fact": {
+            "status": "calculated",
+            "value": 2000,
+            "sources": [
+              "BANK"
+            ],
+            "derivation": "Сумма строк учебной выписки."
+          }
+        },
+        {
+          "month": "2025-04",
+          "fact": {
+            "status": "calculated",
+            "value": 2000,
+            "sources": [
+              "BANK"
+            ],
+            "derivation": "Сумма строк учебной выписки."
+          }
+        },
+        {
+          "month": "2025-05",
+          "fact": {
+            "status": "calculated",
+            "value": 2000,
+            "sources": [
+              "BANK"
+            ],
+            "derivation": "Сумма строк учебной выписки."
+          }
+        },
+        {
+          "month": "2025-06",
+          "fact": {
+            "status": "calculated",
+            "value": 2000,
+            "sources": [
+              "BANK"
+            ],
+            "derivation": "Сумма строк учебной выписки."
+          }
+        },
+        {
+          "month": "2025-07",
+          "fact": {
+            "status": "calculated",
+            "value": 2000,
+            "sources": [
+              "BANK"
+            ],
+            "derivation": "Сумма строк учебной выписки."
+          }
+        },
+        {
+          "month": "2025-08",
+          "fact": {
+            "status": "calculated",
+            "value": 2000,
+            "sources": [
+              "BANK"
+            ],
+            "derivation": "Сумма строк учебной выписки."
+          }
+        },
+        {
+          "month": "2025-09",
+          "fact": {
+            "status": "calculated",
+            "value": 2000,
+            "sources": [
+              "BANK"
+            ],
+            "derivation": "Сумма строк учебной выписки."
+          }
+        },
+        {
+          "month": "2025-10",
+          "fact": {
+            "status": "calculated",
+            "value": 2000,
+            "sources": [
+              "BANK"
+            ],
+            "derivation": "Сумма строк учебной выписки."
+          }
+        },
+        {
+          "month": "2025-11",
+          "fact": {
+            "status": "calculated",
+            "value": 2000,
+            "sources": [
+              "BANK"
+            ],
+            "derivation": "Сумма строк учебной выписки."
+          }
+        },
+        {
+          "month": "2025-12",
+          "fact": {
+            "status": "calculated",
+            "value": 2000,
+            "sources": [
+              "BANK"
+            ],
+            "derivation": "Сумма строк учебной выписки."
+          }
+        }
+      ]
     }
   }
 }

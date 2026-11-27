@@ -19,6 +19,7 @@ from financial_layout import (
     Pages, ReportError, financial, load_assets,
 )
 from historical_cashflow import shifted_month
+from ip_layout import normalize_ip, render_ip
 from report_facts import fact, missing, normalize_score, obj, sequence, stamp, text
 
 FIELD_KEYS = ("summary", "amount", "rate", "term", "chart_period", "debt_date", "ratio_period", "footnote")
@@ -174,10 +175,12 @@ def normalize(raw, position=None):
     accounting_mode = raw.get("accounting_mode", "corporate")
     if accounting_mode not in {"corporate", "ip"}:
         raise ReportError("accounting_mode: corporate или ip")
-    default_layout = "coverage" if position or accounting_mode == "ip" else "statement"
+    default_layout = "ip" if accounting_mode == "ip" else "coverage" if position else "statement"
     layout = raw.get("layout", default_layout)
-    if layout not in {"statement", "coverage"} or (layout == "statement" and accounting_mode != "corporate"):
-        raise ReportError("layout: statement для отчётности или coverage для покрытия")
+    if accounting_mode == "ip" and layout == "coverage":
+        layout = "ip"
+    if layout not in ({"ip"} if accounting_mode == "ip" else {"statement", "coverage"}):
+        raise ReportError("layout: ip для ИП, statement или coverage для компании")
     position = position or {}
     if position and (position.get("currency"), position.get("assessment_date"), position.get("borrower_id")) != (
             currency, day, borrower_id):
@@ -188,7 +191,7 @@ def normalize(raw, position=None):
             catalog.setdefault(source["id"], {"id": source["id"], "title": Path(source["file"]).name,
                                              "locator": source["locator"]})
     section = obj(raw.get("financial", {}), {"fields", "periods", "balance_dates", "statements",
-                                                  "cashflow", "current_debt", "ratios"}, "financial")
+                                                  "cashflow", "current_debt", "ratios", "ip"}, "financial")
 
     def fact_fields(raw_fields, keys, where, *, numeric=False):
         obj(raw_fields, keys, where)
@@ -217,6 +220,11 @@ def normalize(raw, position=None):
         if not isinstance(amount["value"], (int, float)):
             raise ReportError("Сумма займа должна быть числом")
         amount["unit"] = unit
+    if layout == "ip":
+        financial_data["ip"] = normalize_ip(section.get("ip", {}), catalog, day)
+        financial_data["ip_calendar"] = position.get("obligation_calendar", {
+            "horizon": {"start": day, "end_exclusive": add_months(date.fromisoformat(day), 6).isoformat()},
+        })
     if layout == "coverage":
         financial_data["review"] = financial_review(position, catalog, day, accounting_mode, unit)
     return {
@@ -230,7 +238,8 @@ def normalize(raw, position=None):
 def render(raw, position=None):
     data = normalize(raw, position)
     pages = Pages(data, load_assets())
-    financial(pages)
+    is_ip = "ip" in data["sections"]["financial"]
+    (render_ip if is_ip else financial)(pages)
     pages.end()
     if len(pages.pages) != 1:
         raise ReportError("Финансовый отчёт должен помещаться на одном A4")
@@ -246,7 +255,8 @@ def render(raw, position=None):
     pages.rule(L, 797, R)
     pages.lab(label, L, 811, 8, color=GRAY)
     pages.lab("1 / 1", R, 811, 8, True, right=True)
-    pages.lab("Оформление по принятому макету 0.8 / " + VERSION, L, 823, 7.8, color=GRAY)
+    layout_name = "Лист финансового анализа ИП" if is_ip else "Оформление по принятому макету 0.8"
+    pages.lab(layout_name + " / " + VERSION, L, 823, 7.8, color=GRAY)
     pages.c.save()
     page.merge_page(PdfReader(footer).pages[0])
     writer.add_metadata({"/Title": data["title"], "/Author": "ВБетон", "/Subject": VERSION + " / financial",
