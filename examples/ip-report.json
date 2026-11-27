@@ -1,0 +1,70 @@
+{
+  "schema_version": 1,
+  "demo": true,
+  "subject": "Мастерская «Бумажный змей»",
+  "report_id": "DEMO-01",
+  "borrower_id": "DEMO-01",
+  "as_of": "2026-01-01",
+  "currency": "USD",
+  "sources": [
+    {
+      "id": "ANNUAL",
+      "title": "Учебная отчётность",
+      "locator": "source-notes.txt, Accounting extracts"
+    },
+    {
+      "id": "BANK",
+      "title": "Учебная банковская выписка",
+      "locator": "statement.csv, rows 2–25"
+    },
+    {
+      "id": "CONTROL",
+      "title": "Учебные контрольные остатки",
+      "locator": "source-notes.txt, Independent bank controls"
+    },
+    {
+      "id": "DEBT",
+      "title": "Учебный график и условия займа",
+      "locator": "source-notes.txt, Calendar and scope review"
+    },
+    {
+      "id": "BKI-DEMO",
+      "title": "Вымышленный кредитный отчёт",
+      "locator": "source-notes.txt, Synthetic credit bureau score",
+      "document_date": "2025-12-28",
+      "credit_report": {
+        "bureau": "Учебное бюро",
+        "person_id": "DEMO-01"
+      }
+    }
+  ],
+  "persons": [
+    {
+      "id": "DEMO-01",
+      "name": "Мастерская «Бумажный змей»",
+      "score_max": 999,
+      "score": {
+        "status": "confirmed",
+        "value": 742,
+        "sources": [
+          "BKI-DEMO"
+        ],
+        "as_of": "2025-12-28"
+      }
+    }
+  ],
+  "layout": "coverage",
+  "accounting_mode": "ip",
+  "financial": {
+    "fields": {
+      "summary": {
+        "status": "calculated",
+        "value": "Выплата по действующему долгу создаёт разрыв 1 000 USD на 15 марта.",
+        "sources": [
+          "DEBT"
+        ],
+        "derivation": "Календарь обязательств и сценарий денежной позиции."
+      }
+    }
+  }
+}

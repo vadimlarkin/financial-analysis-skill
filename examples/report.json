@@ -1,0 +1,595 @@
+{
+  "schema_version": 1,
+  "demo": true,
+  "subject": "Мастерская «Бумажный змей»",
+  "report_id": "DEMO-01",
+  "borrower_id": "DEMO-01",
+  "as_of": "2026-01-01",
+  "currency": "USD",
+  "sources": [
+    {
+      "id": "ANNUAL",
+      "title": "Учебная отчётность",
+      "locator": "source-notes.txt, Accounting extracts"
+    },
+    {
+      "id": "BANK",
+      "title": "Учебная банковская выписка",
+      "locator": "statement.csv, rows 2–25"
+    },
+    {
+      "id": "CONTROL",
+      "title": "Учебные контрольные остатки",
+      "locator": "source-notes.txt, Independent bank controls"
+    },
+    {
+      "id": "DEBT",
+      "title": "Учебный график и условия займа",
+      "locator": "source-notes.txt, Calendar and scope review"
+    },
+    {
+      "id": "BKI-DEMO",
+      "title": "Вымышленный кредитный отчёт",
+      "locator": "source-notes.txt, Synthetic credit bureau score",
+      "document_date": "2025-12-28",
+      "credit_report": {
+        "bureau": "Учебное бюро",
+        "person_id": "DEMO-01"
+      }
+    },
+    {
+      "id": "CORP-BANK",
+      "title": "Свод корпоративных оборотов",
+      "locator": "source-notes.txt, Presentation-only illustrative turnover"
+    },
+    {
+      "id": "OFFER",
+      "title": "Условные условия нового займа",
+      "locator": "source-notes.txt, Presentation-only loan terms"
+    }
+  ],
+  "persons": [
+    {
+      "id": "DEMO-01",
+      "name": "Мастерская «Бумажный змей»",
+      "score_max": 999,
+      "score": {
+        "status": "confirmed",
+        "value": 742,
+        "sources": [
+          "BKI-DEMO"
+        ],
+        "as_of": "2025-12-28"
+      }
+    }
+  ],
+  "layout": "statement",
+  "accounting_mode": "corporate",
+  "financial": {
+    "fields": {
+      "summary": {
+        "status": "calculated",
+        "value": "Выплата по действующему долгу создаёт разрыв 1 000 USD на 15 марта.",
+        "sources": [
+          "DEBT",
+          "CONTROL",
+          "BANK"
+        ],
+        "derivation": "Календарь и сценарий денежной позиции"
+      },
+      "chart_period": {
+        "status": "confirmed",
+        "value": "2025 · млн USD",
+        "sources": [
+          "CORP-BANK"
+        ]
+      },
+      "debt_date": {
+        "status": "confirmed",
+        "value": "01.01.2026 · млн USD",
+        "sources": [
+          "DEBT"
+        ]
+      },
+      "ratio_period": {
+        "status": "confirmed",
+        "value": "2025",
+        "sources": [
+          "ANNUAL"
+        ]
+      },
+      "footnote": {
+        "status": "confirmed",
+        "value": "Сравнение учитывает выдачу займа целиком и проценты за первые 12 месяцев.",
+        "sources": [
+          "OFFER"
+        ]
+      },
+      "amount": {
+        "status": "confirmed",
+        "value": 5000,
+        "sources": [
+          "OFFER"
+        ]
+      },
+      "rate": {
+        "status": "confirmed",
+        "value": 10,
+        "sources": [
+          "OFFER"
+        ],
+        "unit": "% годовых"
+      },
+      "term": {
+        "status": "confirmed",
+        "value": "12 месяцев · в конце срока",
+        "sources": [
+          "OFFER"
+        ]
+      }
+    },
+    "periods": [
+      {
+        "status": "confirmed",
+        "value": "2023",
+        "sources": [
+          "ANNUAL"
+        ]
+      },
+      {
+        "status": "confirmed",
+        "value": "2024",
+        "sources": [
+          "ANNUAL"
+        ]
+      },
+      {
+        "status": "confirmed",
+        "value": "2025",
+        "sources": [
+          "ANNUAL"
+        ]
+      }
+    ],
+    "balance_dates": [
+      {
+        "status": "confirmed",
+        "value": "31.12.2023",
+        "sources": [
+          "ANNUAL"
+        ]
+      },
+      {
+        "status": "confirmed",
+        "value": "31.12.2024",
+        "sources": [
+          "ANNUAL"
+        ]
+      },
+      {
+        "status": "confirmed",
+        "value": "31.12.2025",
+        "sources": [
+          "ANNUAL"
+        ]
+      }
+    ],
+    "statements": {
+      "revenue": [
+        {
+          "status": "confirmed",
+          "value": 18500,
+          "sources": [
+            "ANNUAL"
+          ]
+        },
+        {
+          "status": "confirmed",
+          "value": 21800,
+          "sources": [
+            "ANNUAL"
+          ]
+        },
+        {
+          "status": "confirmed",
+          "value": 24000,
+          "sources": [
+            "ANNUAL"
+          ]
+        }
+      ],
+      "operating_profit": [
+        {
+          "status": "confirmed",
+          "value": 4800,
+          "sources": [
+            "ANNUAL"
+          ]
+        },
+        {
+          "status": "confirmed",
+          "value": 7000,
+          "sources": [
+            "ANNUAL"
+          ]
+        },
+        {
+          "status": "confirmed",
+          "value": 9000,
+          "sources": [
+            "ANNUAL"
+          ]
+        }
+      ],
+      "net_profit": [
+        {
+          "status": "confirmed",
+          "value": 3500,
+          "sources": [
+            "ANNUAL"
+          ]
+        },
+        {
+          "status": "confirmed",
+          "value": 5150,
+          "sources": [
+            "ANNUAL"
+          ]
+        },
+        {
+          "status": "confirmed",
+          "value": 6500,
+          "sources": [
+            "ANNUAL"
+          ]
+        }
+      ],
+      "total_assets": [
+        {
+          "status": "confirmed",
+          "value": 20000,
+          "sources": [
+            "ANNUAL"
+          ]
+        },
+        {
+          "status": "confirmed",
+          "value": 24500,
+          "sources": [
+            "ANNUAL"
+          ]
+        },
+        {
+          "status": "confirmed",
+          "value": 28500,
+          "sources": [
+            "ANNUAL"
+          ]
+        }
+      ],
+      "fixed_assets": [
+        {
+          "status": "confirmed",
+          "value": 9500,
+          "sources": [
+            "ANNUAL"
+          ]
+        },
+        {
+          "status": "confirmed",
+          "value": 10200,
+          "sources": [
+            "ANNUAL"
+          ]
+        },
+        {
+          "status": "confirmed",
+          "value": 10500,
+          "sources": [
+            "ANNUAL"
+          ]
+        }
+      ],
+      "inventory": [
+        {
+          "status": "confirmed",
+          "value": 1400,
+          "sources": [
+            "ANNUAL"
+          ]
+        },
+        {
+          "status": "confirmed",
+          "value": 1700,
+          "sources": [
+            "ANNUAL"
+          ]
+        },
+        {
+          "status": "confirmed",
+          "value": 2000,
+          "sources": [
+            "ANNUAL"
+          ]
+        }
+      ],
+      "receivables": [
+        {
+          "status": "confirmed",
+          "value": 5100,
+          "sources": [
+            "ANNUAL"
+          ]
+        },
+        {
+          "status": "confirmed",
+          "value": 5600,
+          "sources": [
+            "ANNUAL"
+          ]
+        },
+        {
+          "status": "confirmed",
+          "value": 6000,
+          "sources": [
+            "ANNUAL"
+          ]
+        }
+      ],
+      "cash": [
+        {
+          "status": "confirmed",
+          "value": 4000,
+          "sources": [
+            "ANNUAL"
+          ]
+        },
+        {
+          "status": "confirmed",
+          "value": 7000,
+          "sources": [
+            "ANNUAL"
+          ]
+        },
+        {
+          "status": "confirmed",
+          "value": 10000,
+          "sources": [
+            "ANNUAL"
+          ]
+        }
+      ],
+      "long_term_investments": [
+        {
+          "status": "confirmed",
+          "value": 0,
+          "sources": [
+            "ANNUAL"
+          ]
+        },
+        {
+          "status": "confirmed",
+          "value": 0,
+          "sources": [
+            "ANNUAL"
+          ]
+        },
+        {
+          "status": "confirmed",
+          "value": 0,
+          "sources": [
+            "ANNUAL"
+          ]
+        }
+      ],
+      "short_term_investments": [
+        {
+          "status": "confirmed",
+          "value": 0,
+          "sources": [
+            "ANNUAL"
+          ]
+        },
+        {
+          "status": "confirmed",
+          "value": 0,
+          "sources": [
+            "ANNUAL"
+          ]
+        },
+        {
+          "status": "confirmed",
+          "value": 0,
+          "sources": [
+            "ANNUAL"
+          ]
+        }
+      ],
+      "equity": [
+        {
+          "status": "confirmed",
+          "value": 11500,
+          "sources": [
+            "ANNUAL"
+          ]
+        },
+        {
+          "status": "confirmed",
+          "value": 13500,
+          "sources": [
+            "ANNUAL"
+          ]
+        },
+        {
+          "status": "confirmed",
+          "value": 15000,
+          "sources": [
+            "ANNUAL"
+          ]
+        }
+      ],
+      "long_term_debt": [
+        {
+          "status": "confirmed",
+          "value": 0,
+          "sources": [
+            "ANNUAL"
+          ]
+        },
+        {
+          "status": "confirmed",
+          "value": 0,
+          "sources": [
+            "ANNUAL"
+          ]
+        },
+        {
+          "status": "confirmed",
+          "value": 0,
+          "sources": [
+            "ANNUAL"
+          ]
+        }
+      ],
+      "short_term_debt": [
+        {
+          "status": "confirmed",
+          "value": 7500,
+          "sources": [
+            "ANNUAL"
+          ]
+        },
+        {
+          "status": "confirmed",
+          "value": 9700,
+          "sources": [
+            "ANNUAL"
+          ]
+        },
+        {
+          "status": "confirmed",
+          "value": 12000,
+          "sources": [
+            "ANNUAL"
+          ]
+        }
+      ],
+      "accounts_payable": [
+        {
+          "status": "confirmed",
+          "value": 1000,
+          "sources": [
+            "ANNUAL"
+          ]
+        },
+        {
+          "status": "confirmed",
+          "value": 1300,
+          "sources": [
+            "ANNUAL"
+          ]
+        },
+        {
+          "status": "confirmed",
+          "value": 1500,
+          "sources": [
+            "ANNUAL"
+          ]
+        }
+      ]
+    },
+    "cashflow": {
+      "revenue": {
+        "status": "confirmed",
+        "value": 24000,
+        "sources": [
+          "CORP-BANK"
+        ]
+      },
+      "net_credit_turnover": {
+        "status": "confirmed",
+        "value": 26500,
+        "sources": [
+          "CORP-BANK"
+        ]
+      },
+      "principal_paid": {
+        "status": "confirmed",
+        "value": 4500,
+        "sources": [
+          "CORP-BANK"
+        ]
+      },
+      "cash_interest_paid": {
+        "status": "confirmed",
+        "value": 1200,
+        "sources": [
+          "CORP-BANK"
+        ]
+      }
+    },
+    "current_debt": {
+      "bank_principal": {
+        "status": "confirmed",
+        "value": 12000,
+        "sources": [
+          "DEBT"
+        ]
+      },
+      "unrelated_nonbank_principal": {
+        "status": "confirmed",
+        "value": 0,
+        "sources": [
+          "DEBT"
+        ]
+      },
+      "related_party_principal": {
+        "status": "confirmed",
+        "value": 0,
+        "sources": [
+          "DEBT"
+        ]
+      }
+    },
+    "ratios": {
+      "interest_coverage": {
+        "before": {
+          "status": "calculated",
+          "value": 6,
+          "sources": [
+            "ANNUAL"
+          ],
+          "derivation": "9000 / 1500"
+        },
+        "after": {
+          "status": "calculated",
+          "value": 4.5,
+          "sources": [
+            "ANNUAL",
+            "OFFER"
+          ],
+          "derivation": "9000 / (1500 + 500)"
+        }
+      },
+      "debt_equity": {
+        "before": {
+          "status": "calculated",
+          "value": 0.8,
+          "sources": [
+            "ANNUAL"
+          ],
+          "derivation": "12000 / 15000"
+        },
+        "after": {
+          "status": "calculated",
+          "value": 1.133333,
+          "sources": [
+            "ANNUAL",
+            "OFFER"
+          ],
+          "derivation": "(12000 + 5000) / 15000"
+        }
+      }
+    }
+  }
+}

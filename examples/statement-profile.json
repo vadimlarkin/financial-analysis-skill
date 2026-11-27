@@ -1,0 +1,64 @@
+{
+  "schema_version": "local-statement-csv-1.0",
+  "encoding": "utf-8",
+  "delimiter": ",",
+  "date_format": "%Y-%m-%d",
+  "amount_format": {
+    "decimal_separator": ".",
+    "group_separator": "",
+    "blank_is_zero": false
+  },
+  "direction": {
+    "mode": "separate",
+    "debit_column": "Debit",
+    "credit_column": "Credit"
+  },
+  "columns": {
+    "date": "Date",
+    "purpose": "Purpose",
+    "category": "Category",
+    "currency": "Currency"
+  },
+  "currency": "USD",
+  "account": {
+    "account": "OPERATING",
+    "owner_id": "DEMO-01"
+  },
+  "period": {
+    "start": "2025-01-01",
+    "end": "2025-12-31"
+  },
+  "coverage": {
+    "complete": true
+  },
+  "source_id": "BANK",
+  "service_rows": [],
+  "category_map": {
+    "Customer": {
+      "category": "revenue",
+      "status": "confirmed"
+    },
+    "Supplier": {
+      "category": "suppliers",
+      "status": "confirmed"
+    }
+  },
+  "control_sources": [
+    {
+      "id": "CONTROL",
+      "file": "source-notes.txt",
+      "locator": "Independent bank controls"
+    }
+  ],
+  "bank_controls": [
+    {
+      "account": "OPERATING",
+      "source": "CONTROL",
+      "opening": "400.00",
+      "debit": "14400.00",
+      "credit": "24000.00",
+      "closing": "10000.00",
+      "bank_count": 24
+    }
+  ]
+}

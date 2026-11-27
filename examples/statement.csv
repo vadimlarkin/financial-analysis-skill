@@ -1,0 +1,25 @@
+Date,Debit,Credit,Purpose,Category,Currency
+2025-01-06,0.00,2000.00,Customer invoice 01,Customer,USD
+2025-01-16,1200.00,0.00,Materials 01,Supplier,USD
+2025-02-06,0.00,2000.00,Customer invoice 02,Customer,USD
+2025-02-16,1200.00,0.00,Materials 02,Supplier,USD
+2025-03-06,0.00,2000.00,Customer invoice 03,Customer,USD
+2025-03-16,1200.00,0.00,Materials 03,Supplier,USD
+2025-04-06,0.00,2000.00,Customer invoice 04,Customer,USD
+2025-04-16,1200.00,0.00,Materials 04,Supplier,USD
+2025-05-06,0.00,2000.00,Customer invoice 05,Customer,USD
+2025-05-16,1200.00,0.00,Materials 05,Supplier,USD
+2025-06-06,0.00,2000.00,Customer invoice 06,Customer,USD
+2025-06-16,1200.00,0.00,Materials 06,Supplier,USD
+2025-07-06,0.00,2000.00,Customer invoice 07,Customer,USD
+2025-07-16,1200.00,0.00,Materials 07,Supplier,USD
+2025-08-06,0.00,2000.00,Customer invoice 08,Customer,USD
+2025-08-16,1200.00,0.00,Materials 08,Supplier,USD
+2025-09-06,0.00,2000.00,Customer invoice 09,Customer,USD
+2025-09-16,1200.00,0.00,Materials 09,Supplier,USD
+2025-10-06,0.00,2000.00,Customer invoice 10,Customer,USD
+2025-10-16,1200.00,0.00,Materials 10,Supplier,USD
+2025-11-06,0.00,2000.00,Customer invoice 11,Customer,USD
+2025-11-16,1200.00,0.00,Materials 11,Supplier,USD
+2025-12-06,0.00,2000.00,Customer invoice 12,Customer,USD
+2025-12-16,1200.00,0.00,Materials 12,Supplier,USD

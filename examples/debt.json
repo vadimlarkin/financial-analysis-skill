@@ -1,0 +1,60 @@
+{
+  "schema_version": "local-debt-register-1.0",
+  "currency": "USD",
+  "borrower_id": "DEMO-01",
+  "borrower_kind": "ip",
+  "report_date": "2026-01-01",
+  "sources": [
+    {
+      "id": "DEBT",
+      "file": "source-notes.txt",
+      "locator": "Calendar and scope review"
+    }
+  ],
+  "active_obligations_review": {
+    "as_of": "2026-01-01",
+    "scope_complete": true,
+    "no_active_obligations": false,
+    "reason": "The only outstanding loan is reconciled with the creditor.",
+    "sources": [
+      "DEBT"
+    ]
+  },
+  "records": [
+    {
+      "id": "D-01",
+      "contract_id": "LOAN-01",
+      "subject_id": "DEMO-01",
+      "role": "borrower",
+      "creditor_id": "CREDITOR-01",
+      "status": "active",
+      "as_of": "2026-01-01",
+      "sources": [
+        "DEBT"
+      ],
+      "amounts": {
+        "principal": "12000.00",
+        "interest": "600.00",
+        "total": "12600.00",
+        "overdue": "0.00"
+      },
+      "payment_schedule": {
+        "complete": true,
+        "as_of": "2026-01-01",
+        "sources": [
+          "DEBT"
+        ],
+        "payments": [
+          {
+            "id": "P-01",
+            "date": "2026-03-15",
+            "amount": "12600.00",
+            "sources": [
+              "DEBT"
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

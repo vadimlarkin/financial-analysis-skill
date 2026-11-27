@@ -1,0 +1,80 @@
+{
+  "assessment_date": "2026-01-01",
+  "currency": "USD",
+  "borrower_id": "DEMO-01",
+  "debt_summary": "out/debt-result.json",
+  "cashflow": "out/bank-result.json",
+  "history": {
+    "reviewed_by": "Demo analyst",
+    "classifications": []
+  },
+  "bank_scope": {
+    "bank_target": {
+      "all_accounts_confirmed": true
+    },
+    "bank_accounts": [
+      {
+        "account": "OPERATING",
+        "periods": [
+          {
+            "start": "2025-01-01",
+            "end": "2025-12-31",
+            "sources": [
+              "BANK"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "coverage": {
+    "review_id": "demo-1",
+    "reviewed_by": "Demo analyst",
+    "opening": {
+      "as_of": "2026-01-01",
+      "reason": "Opening balance agreed with bank controls.",
+      "sources": [
+        "CONTROL",
+        "DEBT"
+      ],
+      "accounts": [
+        {
+          "account": "OPERATING",
+          "amount": "10000.00",
+          "sources": [
+            "CONTROL"
+          ]
+        }
+      ],
+      "restrictions": [],
+      "restrictions_complete": true,
+      "advances_review": {
+        "complete": true,
+        "reason": "No advances in synthetic source notes.",
+        "sources": [
+          "DEBT"
+        ]
+      }
+    },
+    "trend_review": {
+      "reason": "The example contains one year of identical synthetic monthly activity.",
+      "sources": [
+        "BANK"
+      ],
+      "one_offs": []
+    },
+    "timing": {
+      "basis": "interval_end",
+      "reason": "Net cash flow is available at each interval end.",
+      "sources": [
+        "DEBT"
+      ]
+    },
+    "business_costs": [],
+    "proposed_loan": {
+      "amount": null,
+      "sources": []
+    },
+    "excluded_inflows": []
+  }
+}

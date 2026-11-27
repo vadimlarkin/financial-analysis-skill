@@ -1,0 +1,39 @@
+Cedar Kite Workshop (Мастерская «Бумажный змей») is fictional. All records and values are invented for this example.
+
+Accounting extracts for 2025 (USD)
+Operating profit 9,000.00. Accrued interest 1,500.00.
+Interest-bearing debt 12,000.00. Equity 15,000.00.
+Current assets 18,000.00. Current liabilities 9,000.00 used in the ratio illustration.
+Presentation example balance sheet: assets 28,500.00, fixed assets 10,500.00, inventory 2,000.00,
+receivables 6,000.00, cash 10,000.00, financial investments 0.00, short-term debt 12,000.00,
+trade payables 1,500.00. Revenue 24,000.00, net profit 6,500.00.
+
+Calendar and scope review on 2026-01-01
+The only debt requires one payment of 12,600.00 on 2026-03-15.
+The principal balance is 12,000.00. The remainder is interest.
+One operating bank account was active throughout 2025.
+Available opening cash on the date of analysis is 10,000.00 with no established restrictions.
+The example assumes the verified net operating flow repeats, available at each interval end.
+No separate commitments, advances or one-off transactions are assumed.
+
+Independent bank controls for the synthetic statement
+Opening 400.00. Inflows 24,000.00. Outflows 14,400.00. Closing 10,000.00.
+
+Synthetic credit bureau score (2025-12-28)
+DEMO-01, Учебное бюро, score 742 on a scale ending at 999.
+
+Presentation-only illustrative turnover
+Customer receipts 24,000.00. Net credit turnover 26,500.00.
+Principal repaid 4,500.00. Interest paid 1,200.00.
+These four figures are a separate visualization example and do not enter the cash-position calculation.
+
+Presentation-only loan terms
+New loan 5,000.00 USD at 10% annually for 12 months. Principal due at maturity.
+The 12-month interest used for comparison is 500.00 USD. No change to operating profit or equity is assumed.
+
+Supplementary accounting figures for 2023 and 2024, respectively (USD)
+Revenue 18,500 / 21,800. Operating profit 4,800 / 7,000. Net profit 3,500 / 5,150.
+Total assets 20,000 / 24,500. Fixed assets 9,500 / 10,200. Inventory 1,400 / 1,700.
+Receivables 5,100 / 5,600. Cash 4,000 / 7,000. Long- and short-term investments 0 / 0.
+Equity 11,500 / 13,500. Long-term debt 0 / 0. Short-term debt 7,500 / 9,700.
+Trade payables 1,000 / 1,300.
